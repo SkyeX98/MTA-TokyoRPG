@@ -14,7 +14,7 @@ addEventHandler("onTryLogin",getRootElement(),function (login,haslo)
         setCameraTarget(source)
         else outputChatBox("#63DBFF*Podałeś złe hasło.",source,0,0,0,true)
     end
-    else outputChatBox("#63DBFF*Niema takiego konta.",source,0,0,0,true)
+    else outputChatBox("#63DBFF*Nie ma takiego konta.",source,0,0,0,true)
 end
 end)
 
@@ -25,7 +25,8 @@ addEventHandler("onTryRegister",getRootElement(),function (login,haslo)
     if addAccount(login,haslo) then
         logIn(source,getAccount(login),haslo)
         outputChatBox("#63DBFF*Zostałeś pomyślnie zarejestrowany i automatycznie zalogowany.",source,0,0,0,true)
-        outputChatBox("#63DBFF*Stworzyłeś konto o nazwie: #B9F46C"..login.." #63DBFFi haśle: #B9F46C"..haslo.."#63DBFF.",source,0,0,0,true)
+      --  outputChatBox("#63DBFF*Stworzyłeś konto o nazwie: #B9F46C"..login.." #63DBFFi haśle: #B9F46C"..haslo.."#63DBFF.",source,0,0,0,true)
+        outputConsole("Login: "..login.." Hasło: "..haslo..".", source)
         triggerClientEvent("hideGui",source)
      --   spawnPlayer(source,0,0,3)
         setCameraTarget(source)
